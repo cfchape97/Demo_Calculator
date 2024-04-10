@@ -1,3 +1,19 @@
 <div class="calculator page">
-    <input type="text">
+    <div class="calculator_card">
+        <input type="text">
+        <div class="buttons">
+            <span *ngFor="let row of [0,1,2]">
+                <div class="row">
+                    <span *ngFor="let button of buttons[row]">
+                        <app-calc-button [text]="button">
+                        </app-calc-button>
+                    </span>
+                </div>
+            </span>
+            <div class="row">
+                <app-calc-button [text]="'0'" [width]="3"></app-calc-button>
+                <app-calc-button [text]="'/'"></app-calc-button>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,10 +1,40 @@
 .calculator {
-    input {
-        width: 90%;
-        height: 60px;
+    background: lightgoldenrodyellow;
+
+    .calculator_card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        border: 1px black solid;
+        width: 800px;
+        height: 500px;
+        padding: 5px;
         border-radius: 10px;
-        font-size: 60px;
-        font-family: math;
-        color: midnightblue;
+        background: gray;
+
+        input {
+            width: 600px;
+            height: 45px;
+            border-radius: 10px;
+            font-size: 45px;
+            font-family: math;
+            text-align: right;
+            color: midnightblue;
+            margin-bottom: 24px;
+        }
+
+        .buttons {
+
+            .row {
+                margin-bottom: 16px;
+
+                app-calc-button {
+                    margin-right: 16px;
+                }
+            }
+        }
     }
+
 }
