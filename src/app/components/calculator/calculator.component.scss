@@ -1,5 +1,5 @@
 .calculator {
-    background: lightgoldenrodyellow;
+    background: whitesmoke;
 
     .calculator_card {
         display: flex;
@@ -15,7 +15,7 @@
         background: gray;
 
         input {
-            width: 600px;
+            width: 440px;
             height: 45px;
             border-radius: 10px;
             font-size: 45px;
@@ -25,16 +25,21 @@
             margin-bottom: 24px;
         }
 
-        .buttons {
+        .equalButton {
+            display: flex;
+            flex-direction: row;
 
-            .row {
-                margin-bottom: 16px;
 
-                app-calc-button {
-                    margin-right: 16px;
+            .buttons {
+
+                .row {
+                    margin-bottom: 16px;
+
+                    app-calc-button {
+                        margin-right: 16px;
+                    }
                 }
             }
         }
     }
-
 }
