@@ -20,4 +20,16 @@ describe('CalcButtonComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should calculate button width', () => {
+    component.width = 2;
+    component.ngOnInit();
+    expect(component.buttonWidth).toEqual(136);
+  })
+
+  it('should calculate button height', () => {
+    component.height =3;
+    component.ngOnInit();
+    expect(component.buttonHeight).toEqual(212);
+  })
 });
