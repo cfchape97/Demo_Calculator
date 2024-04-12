@@ -13,10 +13,14 @@ export class CalcButtonComponent implements OnInit {
   @Input() width: number = 1;
   @Input() height: number = 1;
   buttonWidth = 60;
-  buttonHeight = 48;
+  buttonHeight = 60;
 
   ngOnInit() {
+    this.calculateButtonSize();
+  }
+
+  private calculateButtonSize() {
     this.buttonWidth = 60 * this.width + 16 * (this.width - 1);
-    this.buttonHeight = 48 * this.height + 16 * (this.height - 1);
+    this.buttonHeight = 60 * this.height + 16 * (this.height - 1);
   }
 }

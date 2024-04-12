@@ -4,4 +4,7 @@ button {
     background-color: darkslategray;
     color: white;
     border-radius: 15px;
+    &:hover {
+        cursor: pointer;
+    }
 }

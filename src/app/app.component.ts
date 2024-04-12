@@ -10,5 +10,5 @@ import { LoginComponent } from './components/login/login.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular-app';
+  title = 'first-app';
 }
