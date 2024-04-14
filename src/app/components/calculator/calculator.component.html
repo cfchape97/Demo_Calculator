@@ -1,22 +1,23 @@
 <div class="calculator page">
     <div class="calculator_card">
-        <input type="text">
+        <input type="text" [(ngModel)]="expression" (keyup.enter)="evaluate()" >
         <div class="equalButton">
             <div class="buttons">
                 <span *ngFor="let row of [0,1,2]">
                     <div class="row">
                         <span *ngFor="let button of buttons[row]">
-                            <app-calc-button [text]="button">
+                            <app-calc-button [text]="button" (press)="addValue($event)">
                             </app-calc-button>
                         </span>
                     </div>
                 </span>
                 <div class="row">
-                    <app-calc-button [text]="'0'" [width]="3"></app-calc-button>
-                    <app-calc-button [text]="'/'"></app-calc-button>
+                    <app-calc-button [text]="'0'" [width]="3" (press)="addValue($event)"></app-calc-button>
+                    <app-calc-button [text]="'/'" (press)="addValue($event)"></app-calc-button>
+                    <app-calc-button [text]="'C'" (click)="clear()"></app-calc-button>
                 </div>
             </div>
-            <app-calc-button [text]="'='" [height]="4"></app-calc-button>
+            <app-calc-button [text]="'='" [height]="4" (press)="evaluate()"></app-calc-button>
         </div>
     </div>
 </div>
