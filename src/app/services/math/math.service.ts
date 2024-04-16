@@ -11,7 +11,7 @@ export class MathService {
   evaluateExpression(expression: string): string {
     try {
       const result = math.evaluate(expression);
-      return result;
+      return result.toString();
     } catch (error) {
       return 'Invalid expression';
     }

@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class ButtonComponent {
   @Input() text: string = '';
   @Input() route: string = '';
+  @Input() class: string = '';
 
   constructor(private router: Router) {
 

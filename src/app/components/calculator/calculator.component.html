@@ -1,6 +1,6 @@
 <div class="calculator page">
     <div class="calculator_card">
-        <input type="text" [(ngModel)]="expression" (keyup.enter)="evaluate()" >
+        <input type="text" [(ngModel)]="expression" (keydown)="RestrictCharacters($event)" (keyup.enter)="evaluate()">
         <div class="equalButton">
             <div class="buttons">
                 <span *ngFor="let row of [0,1,2]">
