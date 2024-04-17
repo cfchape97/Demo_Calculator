@@ -1,11 +1,10 @@
+@import '../../../mixins';
+
 .calculator {
     background: whitesmoke;
 
     .calculator_card {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+        @include flex_center;
 
         border: 1px black solid;
         width: 600px;

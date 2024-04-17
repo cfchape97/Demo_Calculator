@@ -1,0 +1,9 @@
+@import '../../../../mixins';
+
+.card {
+    @include flex_center;
+
+    border: 1px black solid;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 3px darkslategray;
+}

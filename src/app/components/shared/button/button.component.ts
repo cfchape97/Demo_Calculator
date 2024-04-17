@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,6 +18,6 @@ export class ButtonComponent {
   }
 
   onClick() {
-    if (this.route.length !=0) this.router.navigate([this.route]);
+    if (this.route.length != 0) this.router.navigate([this.route]);
   }
 }

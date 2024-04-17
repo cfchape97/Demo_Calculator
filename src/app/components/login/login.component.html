@@ -1,12 +1,16 @@
 <div class="login page" >
 
     <h1 class="title">Calculator</h1>
-    
-    <div class="login_card">
-        <img class="icon" src="../../../assets/calculator.png" alt="logo-icon">
-        <app-input icon="email" placeholder="Email" type="email"></app-input>
-        <app-input icon="password" placeholder="Password" type="password"></app-input>
-        <app-button [text]="'Submit'" [route]="'calculator'"></app-button>
-        <span [routerLink]="'/contact'">Contact Us</span>
-    </div>
+    <app-card>
+        <div class="card_content">
+            <img class="icon" src="../../../assets/calculator.png" alt="logo-icon">
+            <app-input icon="email" placeholder="Email" type="email"></app-input>
+            <app-input icon="password" placeholder="Password" type="password"></app-input>
+            <app-button [text]="'Submit'" [route]="'calculator'"></app-button>
+            <span class="contact" [routerLink]="'/contact'">Contact Us</span>
+        </div>
+    </app-card>
+    <!-- <div class="login_card">
+
+    </div> -->
 </div>

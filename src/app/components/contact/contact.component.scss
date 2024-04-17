@@ -1,0 +1,25 @@
+@import '../../../mixins';
+
+.contact {
+    app-card {
+        .contact_contents {
+            @include flex_center;
+            padding: 50px 150px 10px 150px;
+
+            .names {
+                display: flex;
+                flex-direction: row;
+            }
+        }
+
+        .message {
+            border-radius: 10px;
+            border:2px solid hotpink;
+        }
+
+        app-button {
+            margin-right: auto;
+        }
+    }
+
+}

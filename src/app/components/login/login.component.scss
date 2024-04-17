@@ -1,20 +1,30 @@
+@import '../../../mixins';
+
 .login {
     .title {
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         padding-bottom: 50px;
     }
 
-    .login_card {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+    app-card {
+        .card_content {
+            @include flex_center;
 
-        border: 1px black solid;
-        border-radius: 10px;
-        box-shadow: 0px 0px 3px 3px darkslategray;
 
-        width: 500px;
-        height: 300px;
+            padding: 16px 100px;
+
+            .icon {
+                width: 48px;
+                height: auto;
+            }
+
+            .contact {
+                color: blue;
+
+                &:hover {
+                    color: lightblue;
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }

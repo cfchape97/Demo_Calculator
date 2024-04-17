@@ -1,9 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'mixins';
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+@include flex_center;
     
     width: 100%;
     height: 100vh;
