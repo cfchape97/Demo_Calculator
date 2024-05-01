@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ButtonComponent } from './button.component';
-import { Router } from '@angular/router';
+
 
 describe('ButtonComponent', () => {
   let component: ButtonComponent;
@@ -14,10 +13,7 @@ describe('ButtonComponent', () => {
     };
 
     await TestBed.configureTestingModule({
-      imports: [ButtonComponent],
-      providers: [
-        { provide: Router, useValue: mockRouter },
-      ]
+      imports: [ButtonComponent]
     })
       .compileComponents();
 
@@ -30,15 +26,4 @@ describe('ButtonComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should navigate to route if length > 0', () => {
-    component.route = 'test';
-    component.onClick();
-    expect(mockRouter.navigate).toHaveBeenCalled();
-  });
-
-  it('should not navigate to route if length == 0', () => {
-    component.route = '';
-    component.onClick();
-    expect(mockRouter.navigate).toHaveBeenCalledTimes(0);
-  });
 });

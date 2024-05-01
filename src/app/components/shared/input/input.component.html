@@ -1,5 +1,7 @@
 <input 
-    [placeholder]="placeholder"
-    [type]="type"
-    [ngStyle]="{background: prefixIcon, width: buttonWidth + 'px' }"
->
+[placeholder]="placeholder" 
+[type]="type" 
+[ngStyle]="{background: prefixIcon, width: buttonWidth + 'px' }"
+[value]="value" 
+(input)="handleInput($event)" 
+(blur)="onTouched()">

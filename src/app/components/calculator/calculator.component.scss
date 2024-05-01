@@ -1,44 +1,45 @@
 @import '../../../mixins';
 
-.calculator {
-    background: whitesmoke;
 
-    .calculator_card {
-        @include flex_center;
+    .calculator {
+        background: whitesmoke;
 
-        border: 1px black solid;
-        width: 600px;
-        height: 550px;
-        padding: 5px;
-        border-radius: 10px;
-        background: gray;
+        .calculator_card {
+            @include flex_center;
 
-        input {
-            width: 440px;
-            height: 45px;
+            border: 1px black solid;
+            width: 600px;
+            height: 550px;
+            padding: 5px;
             border-radius: 10px;
-            font-size: 45px;
-            font-family: math;
-            text-align: right;
-            color: midnightblue;
-            margin-bottom: 24px;
-        }
+            background: gray;
 
-        .equalButton {
-            display: flex;
-            flex-direction: row;
+            input {
+                width: 440px;
+                height: 45px;
+                border-radius: 10px;
+                font-size: 45px;
+                font-family: math;
+                text-align: right;
+                color: midnightblue;
+                margin-bottom: 24px;
+            }
+
+            .equalButton {
+                display: flex;
+                flex-direction: row;
 
 
-            .buttons {
+                .buttons {
 
-                .row {
-                    margin-bottom: 16px;
+                    .row {
+                        margin-bottom: 16px;
 
-                    app-calc-button {
-                        margin-right: 16px;
+                        app-calc-button {
+                            margin-right: 16px;
+                        }
                     }
                 }
             }
         }
     }
-}

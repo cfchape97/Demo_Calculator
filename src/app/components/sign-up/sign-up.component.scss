@@ -1,0 +1,15 @@
+@import '../../../mixins';
+
+.sign_up {
+    app-card {
+        .sign_up_contents {
+            @include flex_center;
+            padding: 50px 150px 10px 150px;
+
+            .names {
+                display: flex;
+                flex-direction: row;
+            }
+        }
+    }
+}

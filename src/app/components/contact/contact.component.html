@@ -1,14 +1,16 @@
+<app-layout>
 <div class="contact page">
     <h1 class="title">Contact Us</h1>
     <app-card>
-        <div class="contact_contents">
+        <form [formGroup]="contactForm" class="contact_contents">
             <div class="names">
-                <app-input [placeholder]="'First Name'"></app-input>
-                <app-input [placeholder]="'Last Name'"></app-input>
+                <app-input formControlName="firstName" [placeholder]="'First Name'"></app-input>
+                <app-input formControlName="lastName" [placeholder]="'Last Name'"></app-input>
             </div>
-            <app-input [width]="2" class="email" [placeholder]="'Email'"></app-input>
-            <textarea name="" id="" cols="62" rows="10" class="message"></textarea>
-            <app-button [text]="'Submit'"></app-button>
-        </div>
+            <app-input formControlName="email" [width]="2" class="email" [placeholder]="'Email'"></app-input>
+            <textarea formControlName="message" name="" id="" cols="62" rows="10" class="message" (keyup.enter)="onSubmit()"></textarea>
+            <app-button [text]="'Submit'" (click)="onSubmit()" [disabled]="contactForm.invalid"></app-button> 
+        </form>
     </app-card>
 </div>
+</app-layout>

@@ -3,11 +3,12 @@ import { CalcButtonComponent } from '../shared/calc-button/calc-button.component
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MathService } from '../../services/math/math.service';
+import { LayoutComponent } from '../shared/layout/layout.component';
 
 @Component({
   selector: 'app-calculator',
   standalone: true,
-  imports: [CalcButtonComponent, CommonModule, FormsModule],
+  imports: [CalcButtonComponent, CommonModule, FormsModule, LayoutComponent],
   templateUrl: './calculator.component.html',
   styleUrl: './calculator.component.scss'
 })

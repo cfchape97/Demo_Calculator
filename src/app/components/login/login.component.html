@@ -1,16 +1,13 @@
-<div class="login page" >
-
+<div class="login page">
     <h1 class="title">Calculator</h1>
     <app-card>
-        <div class="card_content">
+        <form [formGroup]="loginForm" (ngSubmit)="authenticate()" class="card_content">
             <img class="icon" src="../../../assets/calculator.png" alt="logo-icon">
-            <app-input icon="email" placeholder="Email" type="email"></app-input>
-            <app-input icon="password" placeholder="Password" type="password"></app-input>
-            <app-button [text]="'Submit'" [route]="'calculator'"></app-button>
+            <app-input formControlName="email" icon="email" placeholder="Email" type="email"></app-input>
+            <app-input formControlName="password" icon="password" placeholder="Password" type="password"></app-input>
+            <app-button [text]="'Submit'" type="submit" [disabled]="loginForm.invalid"></app-button>
+            <p>Don't have an account? <span class="signup" [routerLink]="'/sign-up'">Sign Up</span></p>
             <span class="contact" [routerLink]="'/contact'">Contact Us</span>
-        </div>
+        </form>
     </app-card>
-    <!-- <div class="login_card">
-
-    </div> -->
 </div>

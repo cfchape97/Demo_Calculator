@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0px;
 }
 
 .page {
@@ -9,4 +10,13 @@ body {
     
     width: 100%;
     height: 100vh;
+}
+
+span {
+    color: blue;
+
+    &:hover {
+        color: lightblue;
+        cursor: pointer;
+    }
 }

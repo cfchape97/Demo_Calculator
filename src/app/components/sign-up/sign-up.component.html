@@ -1,0 +1,29 @@
+<div class="sign_up page">
+    <h1 class="title">Sign Up</h1>
+    <app-card>
+        <form [formGroup]="signUpForm" class="sign_up_contents">
+            <div class="names">
+                <app-input formControlName="firstName" [placeholder]="'First Name'"></app-input>
+                <app-input formControlName="lastName" [placeholder]="'Last Name'"></app-input>
+            </div>
+            <app-input 
+                formControlName="email"
+                [icon]="'email'" 
+                [width]="2" 
+                class="email" 
+                [placeholder]="'Email'" 
+                [type]="'email'">
+            </app-input>
+            <app-input 
+                formControlName="password"
+                [icon]="'password'" 
+                [width]="2" 
+                class="password" 
+                [placeholder]="'Password'"
+                [type]="'password'">
+            </app-input>
+            <app-button [text]="'Submit'" (click)="onSubmit()" [disabled]="signUpForm.invalid"></app-button>
+        </form>
+        <p>Already have an account? <span routerLink="/login">Back to Login.</span></p>
+    </app-card>
+</div>
