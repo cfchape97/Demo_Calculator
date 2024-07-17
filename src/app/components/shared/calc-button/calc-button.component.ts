@@ -13,8 +13,10 @@ export class CalcButtonComponent implements OnInit {
   @Input() width: number = 1;
   @Input() height: number = 1;
   @Output() press = new EventEmitter<string>();
+  @Input() color: string = '#ffc139';
   buttonWidth = 60;
   buttonHeight = 60;
+  isPressed = false; 
 
   ngOnInit() {
     this.calculateButtonSize();

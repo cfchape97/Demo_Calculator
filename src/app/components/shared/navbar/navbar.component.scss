@@ -1,5 +1,7 @@
+@import '../../../../colors';
+
 .navbar {
-    background-color: darkslategray;
+    background-color: $secondary-dark;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -8,41 +10,44 @@
     width: 97vw;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1;
 
-    
-.brand a {
-    font-size: 25px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: white;
-    text-decoration: none;
-}
 
-.nav-links ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links li {
-    display: inline;
-    padding: 4px;
-    
-}
-
-.nav-links li a {
-    border: solid pink 2px;
-    padding: 6px 16px;
-    border-radius: 5px;
-    color: white;
-    background-color: pink;
-    text-decoration: none;
-    font-size: 14px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-    &:hover {
-        background-color: hotpink;
-        cursor: pointer;
+    .brand a {
+        font-size: 25px;
+        font-family: 'Roboto';
+        color: white;
+        text-decoration: none;
     }
-}
+
+    .nav-links {
+
+        &__items {
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: inline;
+                padding: 4px;
+
+                a {
+                    padding: 6px 16px;
+                    border-radius: 5px;
+                    color: white;
+                    background-color: $secondary-dark;
+                    text-decoration: none;
+                    font-size: 14px;
+                    font-family: 'Roboto';
+
+                    &:hover {
+                        background-color: $primary;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
 }

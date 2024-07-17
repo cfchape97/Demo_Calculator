@@ -1,3 +1,5 @@
-<button [ngStyle]="{width: buttonWidth + 'px',height: buttonHeight + 'px'}" (click)="onClick()">
+<button [ngStyle]="{width: buttonWidth + 'px',height: buttonHeight + 'px', 
+backgroundColor: color, 'box-shadow': isPressed ? '0 2px 5px rgba(0, 0, 0, 0.2)' : '0 4px 10px rgba(0, 0, 0, 0.3)'}"
+    (mousedown)="isPressed = true" (mouseup)="isPressed = false" (mouseleave)="isPressed = false" (click)="onClick()">
     {{text}}
 </button>

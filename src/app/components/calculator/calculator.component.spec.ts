@@ -1,19 +1,32 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CalculatorComponent } from './calculator.component';
+import { CalcButtonComponent } from '../shared/calc-button/calc-button.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { MathService } from '../../services/math/math.service';
+import { LayoutComponent } from '../shared/layout/layout.component';
+import { By } from '@angular/platform-browser';
 
 describe('CalculatorComponent', () => {
   let component: CalculatorComponent;
   let fixture: ComponentFixture<CalculatorComponent>;
+  let mathService: MathService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CalculatorComponent]
-    })
-      .compileComponents();
+      imports: [
+        CommonModule,
+        FormsModule,
+        CalcButtonComponent,
+        LayoutComponent
+      ],
+      declarations: [CalculatorComponent],
+      providers: [MathService]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CalculatorComponent);
     component = fixture.componentInstance;
+    mathService = TestBed.inject(MathService);
     fixture.detectChanges();
   });
 
@@ -23,31 +36,44 @@ describe('CalculatorComponent', () => {
 
   it('should populate buttons', () => {
     component.populateButtons();
-    expect(component.buttons).toEqual([['1','2','3','+','('], ['4','5','6','-',')'], ['7','8','9','*','.']]);
+    expect(component.buttons.length).toBe(3);
+    expect(component.buttons[0].length).toBe(5);
   });
 
   it('should add value to expression', () => {
-    let event = '1';
-    component.addValue(event);
-    expect(component.expression).toEqual('1');
+    component.addValue('1');
+    expect(component.expression).toBe('1');
+    component.addValue('+');
+    expect(component.expression).toBe('1+');
   });
 
-  it('should concatenate value to previous expression', () => {
-    component.expression = '1';
-    let event = '+';
-    component.addValue(event);
-    expect(component.expression).toEqual('1+');
-  });
-
-  it('should evaluate the epxression', () => {
-    component.expression = '2*2';
-    component.evaluate();
-    expect(`${component.expression}`).toEqual('4');
-  })
-
-  it('should clear the value of the expression', () => {
-    component.expression = '2*2';
+  it('should clear the expression', () => {
+    component.addValue('1');
     component.clear();
-    expect(component.expression).toEqual('');
-  })
+    expect(component.expression).toBe('');
+  });
+
+  it('should evaluate the expression', () => {
+    spyOn(mathService, 'evaluateExpression').and.returnValue('3');
+    component.addValue('1+2');
+    component.evaluate();
+    expect(mathService.evaluateExpression).toHaveBeenCalledWith('1+2');
+    expect(component.expression).toBe('3');
+  });
+
+  it('should restrict characters', () => {
+    const event = new KeyboardEvent('keydown', {
+      key: 'a'
+    });
+    spyOn(event, 'preventDefault');
+    component.RestrictCharacters(event);
+    expect(event.preventDefault).toHaveBeenCalled();
+
+    const validEvent = new KeyboardEvent('keydown', {
+      key: '1'
+    });
+    spyOn(validEvent, 'preventDefault');
+    component.RestrictCharacters(validEvent);
+    expect(validEvent.preventDefault).not.toHaveBeenCalled();
+  });
 });

@@ -1,0 +1,6 @@
+<mat-icon (click)="toggleDropdown()">{{icon}}</mat-icon>
+<ul #dropdownMenu *ngIf="isOpen" class="dropdown-menu">
+    <li *ngFor="let option of options" (click)="selectOption(option.name)" [routerLink]="option.route">
+        {{ option.name }}
+    </li>
+</ul>

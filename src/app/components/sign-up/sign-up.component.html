@@ -9,7 +9,6 @@
             <app-input 
                 formControlName="email"
                 [icon]="'email'" 
-                [width]="2" 
                 class="email" 
                 [placeholder]="'Email'" 
                 [type]="'email'">
@@ -17,13 +16,12 @@
             <app-input 
                 formControlName="password"
                 [icon]="'password'" 
-                [width]="2" 
                 class="password" 
                 [placeholder]="'Password'"
                 [type]="'password'">
             </app-input>
             <app-button [text]="'Submit'" (click)="onSubmit()" [disabled]="signUpForm.invalid"></app-button>
         </form>
-        <p>Already have an account? <span routerLink="/login">Back to Login.</span></p>
+        <p>Already have an account? <span class="link" routerLink="/login">Back to Login.</span></p>
     </app-card>
 </div>

@@ -1,4 +1,5 @@
 @import '../../../mixins';
+@import '../../../colors';
 
 .contact {
     app-card {
@@ -9,14 +10,15 @@
             .names {
                 display: flex;
                 flex-direction: row;
+                width: 100%;
             }
 
             .message {
-                border-radius: 10px;
-                border:2px solid hotpink;
+                border-radius: 5px;
+                border: 1px solid $primary-dark;
                 width: 452px;
                 margin: 5px;
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-family: 'Roboto';
                 padding-left: 20px;
             }
     

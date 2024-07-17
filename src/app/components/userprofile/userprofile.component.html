@@ -1,0 +1,27 @@
+<app-layout>
+    <div class="user page">
+        <div class="title">
+            <h1>Welcome, {{user.firstName}}</h1>
+        </div>
+        <div class="usercontainers">
+            <app-card class="usercontainer">
+                <div class="info">
+                    <h2>User Information</h2>
+                    <p>First Name: <input type="text" [(ngModel)]="user.firstName" [disabled]="!editMode"> </p>
+                    <p>Last Name: <input type="text" [(ngModel)]="user.lastName" [disabled]="!editMode"> </p>
+                    <p>Email: <input type="email" [(ngModel)]="user.email" [disabled]="!editMode"> </p>
+                    <app-button class="edit" (click)="editMode = !editMode"
+                        [text]="editMode? 'Cancel' : 'Edit'"></app-button>
+                    <app-button class="save" *ngIf="editMode" (click)="saveUserInfo()" [text]="'Save'"></app-button>
+                </div>
+            </app-card>
+            <app-card class="usercontainer2">
+                <div class="history">
+                    <h2>Calculation History</h2>
+                    <div class="calculation" *ngFor="let calculation of calculationHistory$ | async"> {{ calculation }}
+                    </div>
+                </div>
+            </app-card>
+        </div>
+    </div>
+</app-layout>

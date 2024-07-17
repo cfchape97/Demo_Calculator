@@ -1,9 +1,11 @@
 @import '../../../../mixins';
+@import '../../../../colors';
 
 .card {
     @include flex_center;
 
-    border: 1px black solid;
-    border-radius: 10px;
-    box-shadow: 0px 0px 3px 3px darkslategray;
+    box-shadow: 3px 2px 14px 0 rgba(0,0,0,0.2);
+    border-radius: 15px;
+    background-color: white;
+    padding: 16px 20px;
 }

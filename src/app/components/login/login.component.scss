@@ -1,8 +1,20 @@
 @import '../../../mixins';
+@import '../../../colors';
 
 .login {
     .title {
+        color: $secondary;
+        font-size: 76px;
+        margin-bottom: 0;
+    }
+
+    .subtitle {
+        color: $secondary-dark;
         padding-bottom: 50px;
+        margin-top: 0;
+        font-weight: 300;
+        letter-spacing: 5px;
+        font-size: 22px;
     }
 
     app-card {
@@ -10,14 +22,19 @@
             @include flex_center;
             padding: 16px 100px;
 
-            .icon {
-                width: 48px;
-                height: auto;
+            mat-icon {
+                transform: scale(2);
+                position: relative;
+                bottom: 14px;
+                color: $secondary-dark;
             }
 
             p {
-                margin: 0px;
+                margin: 0px; 
+                font-size: 14px;
             }
+
+
         }
     }
 }

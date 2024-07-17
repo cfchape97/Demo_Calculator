@@ -8,3 +8,10 @@ export const canActivateLogin: CanActivateFn = (
 ): boolean | UrlTree => {
   return inject(DateService).sessionValid() ? true : inject(Router).createUrlTree(['/login']);
 };
+
+export const canActivateCalculator: CanActivateFn = (
+  route: ActivatedRouteSnapshot,
+  state: RouterStateSnapshot,
+): boolean | UrlTree => {
+  return !inject(DateService).sessionValid() ? true : inject(Router).createUrlTree(['/calculator']);
+};

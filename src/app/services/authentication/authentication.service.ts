@@ -39,4 +39,8 @@ export class AuthenticationService {
   get lastLoginTime() {
     return new Date(JSON.parse(localStorage.getItem('login') ?? '')?.date);
   }
+
+  signOut(): any {
+    localStorage.removeItem('login');
+  }
 }

@@ -1,7 +1,8 @@
+<!-- <img [src]="prefixIcon" alt=""> -->
+<mat-icon>{{text}}</mat-icon>
 <input 
 [placeholder]="placeholder" 
 [type]="type" 
-[ngStyle]="{background: prefixIcon, width: buttonWidth + 'px' }"
 [value]="value" 
 (input)="handleInput($event)" 
 (blur)="onTouched()">

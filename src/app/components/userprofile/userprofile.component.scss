@@ -1,0 +1,56 @@
+@import '../../../colors';
+
+.user {
+
+    .title {
+        flex-direction: column;
+
+        h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .usercontainers {
+        display: flex;
+        flex-direction: row;
+        .usercontainer {
+            padding: 16px;
+            min-height: 280px;
+            min-width: 250px;
+            font-family: 'Roboto';
+
+            .info {
+                padding: 16px;
+            }
+
+            button {
+                background-color: $primary;
+                border: 1px solid $primary-dark;
+                border-radius: 5px;
+                padding: 8px 14px;
+                margin: 5px;
+                margin-left: 0px;
+                font-size: 16px;
+                font-family: 'Roboto';
+                color: white;
+
+                &:hover {
+                    background-color: $primary-dark;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .usercontainer2 {
+            padding: 16px;
+            min-height: 280px;
+            min-width: 250px;
+
+            .history {
+                padding: 16px;
+            }
+        }
+    }
+}

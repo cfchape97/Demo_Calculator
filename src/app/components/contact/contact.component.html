@@ -7,7 +7,7 @@
                 <app-input formControlName="firstName" [placeholder]="'First Name'"></app-input>
                 <app-input formControlName="lastName" [placeholder]="'Last Name'"></app-input>
             </div>
-            <app-input formControlName="email" [width]="2" class="email" [placeholder]="'Email'"></app-input>
+            <app-input formControlName="email"  class="email" [placeholder]="'Email'"></app-input>
             <textarea formControlName="message" name="" id="" cols="62" rows="10" class="message" (keyup.enter)="onSubmit()"></textarea>
             <app-button [text]="'Submit'" (click)="onSubmit()" [disabled]="contactForm.invalid"></app-button> 
         </form>

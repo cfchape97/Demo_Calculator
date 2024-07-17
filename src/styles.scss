@@ -1,22 +1,35 @@
 @import 'mixins';
+@import 'colors';
+
 
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Roboto';
     margin: 0px;
 }
 
 .page {
-@include flex_center;
-    
+    @include flex_center;
+
     width: 100%;
-    height: 100vh;
+    height: 90vh;
 }
 
-span {
-    color: blue;
+.link {
+    color: $primary;
 
     &:hover {
-        color: lightblue;
+        color: $primary-dark;
         cursor: pointer;
     }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: $surface;
 }

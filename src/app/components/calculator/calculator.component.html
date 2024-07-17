@@ -1,7 +1,6 @@
 <app-layout>
     <div class="calculator page">
 
-
         <div class="calculator_card">
             <input type="text" [(ngModel)]="expression" (keydown)="RestrictCharacters($event)"
                 (keyup.enter)="evaluate()">
@@ -10,18 +9,18 @@
                     <span *ngFor="let row of [0,1,2]">
                         <div class="row">
                             <span *ngFor="let button of buttons[row]">
-                                <app-calc-button [text]="button" (press)="addValue($event)">
+                                <app-calc-button [text]="button.symbol" [color]="button.color" (press)="addValue($event)">
                                 </app-calc-button>
                             </span>
                         </div>
                     </span>
                     <div class="row">
-                        <app-calc-button [text]="'0'" [width]="3" (press)="addValue($event)"></app-calc-button>
-                        <app-calc-button [text]="'/'" (press)="addValue($event)"></app-calc-button>
-                        <app-calc-button [text]="'C'" (click)="clear()"></app-calc-button>
+                        <app-calc-button [text]="'0'" [width]="3" (press)="addValue($event)" [color]="'#cc9a2d'"></app-calc-button>
+                        <app-calc-button [text]="'/'" (press)="addValue($event)" [color]="'#664d16'"></app-calc-button>
+                        <app-calc-button [text]="'C'" (click)="clear()" [color]="'#664d16'"></app-calc-button>
                     </div>
                 </div>
-                <app-calc-button [text]="'='" [height]="4" (press)="evaluate()"></app-calc-button>
+                <app-calc-button [text]="'='" [height]="4" (press)="evaluate()" [color]="'#e76b54'"></app-calc-button>
             </div>
         </div>
 
