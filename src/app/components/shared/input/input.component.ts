@@ -28,8 +28,6 @@ export class InputComponent implements ControlValueAccessor {
   onChange = (value: string) => {};
   onTouched = () => {};
 
-
-
   handleInput(event: any) {
     this.value = event.target.value;
     this.onChange(this.value);

@@ -1,22 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { ButtonComponent } from './button.component';
-
 
 describe('ButtonComponent', () => {
   let component: ButtonComponent;
   let fixture: ComponentFixture<ButtonComponent>;
-  let mockRouter: { navigate: jasmine.Spy };
 
   beforeEach(async () => {
-    mockRouter = {
-      navigate: jasmine.createSpy('navigate')
-    };
-
     await TestBed.configureTestingModule({
-      imports: [ButtonComponent]
+      imports: [ButtonComponent] // Importing the standalone component
     })
-      .compileComponents();
+    .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(ButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -26,4 +23,17 @@ describe('ButtonComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should display the correct text', () => {
+    component.text = 'Test Button';
+    fixture.detectChanges();
+    const buttonElement = fixture.debugElement.query(By.css('button')).nativeElement;
+    expect(buttonElement.textContent).toContain('Test Button');
+  });
+
+  it('should be disabled when the disabled input is true', () => {
+    component.disabled = true;
+    fixture.detectChanges();
+    const buttonElement = fixture.debugElement.query(By.css('button')).nativeElement;
+    expect(buttonElement.disabled).toBeTrue();
+  });
 });

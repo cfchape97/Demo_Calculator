@@ -22,7 +22,6 @@ export class AuthenticationService {
 
     let user: SignUpUser = userInformation ? JSON.parse(userInformation) : null;
 
-
     if (user?.email === loginUser?.email && user?.password === loginUser?.password) {
       console.log('authenticated');
       return true;

@@ -15,12 +15,12 @@ describe('CalculatorComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
+        CalculatorComponent,
         CommonModule,
         FormsModule,
         CalcButtonComponent,
         LayoutComponent
       ],
-      declarations: [CalculatorComponent],
       providers: [MathService]
     }).compileComponents();
 

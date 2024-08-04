@@ -18,14 +18,15 @@ export class ContactComponent {
 
   constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
     this.contactForm = fb.group({
-      firstName: new FormControl(null, [Validators.required]),
-      lastName: new FormControl(null, [Validators.required]),
-      email: new FormControl(null, [Validators.email, Validators.required]),
-      message: new FormControl(null, [Validators.required]),
+      firstName: new FormControl<string | null>(null, [Validators.required]),
+      lastName: new FormControl<string | null>(null, [Validators.required]),
+      email: new FormControl<string | null>(null, [Validators.email, Validators.required]),
+      message: new FormControl<string | null>(null, [Validators.required]),
     });
   }
 
   onSubmit(): void {
+    debugger;
     this.snackBar.open('Form Submitted Successfully', undefined, {
       duration: 3000
     });
